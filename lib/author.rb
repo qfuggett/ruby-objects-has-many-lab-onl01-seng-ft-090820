@@ -15,18 +15,17 @@ class Author
     @@post_count += 1 
   end
   
-  
-  def posts
-    Post.all.select {|posts| posts.author == self}
-  end
-  
-  
-  def add_post_by_title(title)
+   def add_post_by_title(title)
     posts = Post.new(title)
     @posts << posts
     posts.author = self
     @@post_count += 1
   end
+  
+  def posts
+    Post.all.select {|posts| posts.author == self}
+  end
+  
   
   
   def self.post_count
