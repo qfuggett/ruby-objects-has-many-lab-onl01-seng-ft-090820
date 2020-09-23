@@ -24,7 +24,7 @@ class Artist
   def add_song_by_name(name)
     song = Song.new(name)     #creates a new song with given argument on the Song class
     add_song(song)            #thereby associating the song with the artist
-    @@song_count += 1
+    @@song_count += 1         #counter for song for each iteration
   end
   
   
