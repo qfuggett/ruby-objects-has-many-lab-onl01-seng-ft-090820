@@ -9,6 +9,11 @@ class Author
   end
   
   
+  def posts
+    Post.all.select {|posts| posts.author == self}
+  end
+  
+  
   def add_post(posts)
     self.posts << posts
     posts.author = self        #associates song with artist
@@ -21,11 +26,6 @@ class Author
     posts.author = self
     @@post_count += 1
   end
-  
-  def posts
-    Post.all.select {|posts| posts.author == self}
-  end
-  
   
   
   def self.post_count
