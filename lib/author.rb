@@ -11,7 +11,7 @@ class Author
   
   def posts
     Post.all.select {|posts| posts.author == self}    
-    #referring to the class variable @@all 
+    #referring to the class variable @@all in Posts
   end
   
   
